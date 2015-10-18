@@ -1,4 +1,4 @@
-package es.upm.miw.web.http;
+package http;
 
 public enum HttpMethod {
     GET, POST, PUT, DELETE, OPTIONS, HEAD

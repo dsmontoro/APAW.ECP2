@@ -1,4 +1,4 @@
-package presentation.models;
+package web.presentation.models;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,4 +1,7 @@
-package presentation.views;
+package web.presentation.views;
+
+import web.presentation.models.Model;
+
 public class ErrorView implements View {
 
     @Override

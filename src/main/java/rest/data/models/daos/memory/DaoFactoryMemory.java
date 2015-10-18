@@ -1,3 +1,7 @@
+package rest.data.models.daos.memory;
+
+import rest.data.models.daos.DaoFactory;
+
 public class DaoFactoryMemory extends DaoFactory {
 
     private ThemeDao themeDao;

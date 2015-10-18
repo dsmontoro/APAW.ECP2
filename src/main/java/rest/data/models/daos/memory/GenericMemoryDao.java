@@ -1,3 +1,4 @@
+package rest.data.models.daos.memory;
 public abstract class GenericMemoryDao<T, ID> implements GenericDao<T, ID> {
 
     private Map<ID, T> map;

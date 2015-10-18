@@ -1,3 +1,4 @@
+package rest.business.models.entities;
 public class Theme {
 
     private int id;
