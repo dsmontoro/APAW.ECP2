@@ -1,4 +1,12 @@
 package rest.data.models.daos.memory;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import rest.business.models.entities.Theme;
+import rest.data.models.daos.ThemeDao;
+
 public class ThemeMemoryDao extends GenericMemoryDao<Theme, Integer> implements ThemeDao {
 
     public ThemeMemoryDao() {

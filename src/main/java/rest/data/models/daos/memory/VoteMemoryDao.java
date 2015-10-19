@@ -1,4 +1,12 @@
 package rest.data.models.daos.memory;
+
+import java.util.HashMap;
+import java.util.List;
+
+import rest.business.models.entities.Theme;
+import rest.business.models.entities.Vote;
+import rest.data.models.daos.VoteDao;
+
 public class VoteMemoryDao extends GenericMemoryDao<Vote, Integer> implements VoteDao {
 
     public VoteMemoryDao() {

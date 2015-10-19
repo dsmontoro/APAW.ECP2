@@ -1,6 +1,8 @@
 package rest.data.models.daos.memory;
 
 import rest.data.models.daos.DaoFactory;
+import rest.data.models.daos.ThemeDao;
+import rest.data.models.daos.VoteDao;
 
 public class DaoFactoryMemory extends DaoFactory {
 

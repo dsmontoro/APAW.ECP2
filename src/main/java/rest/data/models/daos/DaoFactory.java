@@ -1,12 +1,20 @@
 package rest.data.models.daos;
 
-import rest.data.models.daos.memory.DaoFactoryMemory;
-
 public abstract class DaoFactory {
 
-    public static void setFactory(DaoFactoryMemory daoFactoryMemory) {
-        // TODO Auto-generated method stub
-        
+	public static DaoFactory factory = null;
+	
+    public static void setFactory(DaoFactory factory) {
+        DaoFactory.factory = factory;        
     }
+    
+    public static DaoFactory getFactory() {
+        assert factory != null;
+        return factory;
+    }
+    
+    public abstract ThemeDao getThemeDao();
+    
+    public abstract VoteDao getVoteDao();
 
 }
