@@ -6,8 +6,8 @@ public class ThemeManagerView implements View {
 
 	@Override
 	public void show(Model model) {
-		// TODO Auto-generated method stub
-
+	    System.out.println("Theme Manager Page");
+	    System.out.println("   Temas: ");
 	}
 
 }

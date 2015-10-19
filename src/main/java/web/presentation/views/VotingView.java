@@ -6,8 +6,8 @@ public class VotingView implements View {
 
 	@Override
 	public void show(Model model) {
-		// TODO Auto-generated method stub
-
+	    System.out.println("Voting Page");
+	    System.out.println("   Temas: ");
 	}
 
 }
