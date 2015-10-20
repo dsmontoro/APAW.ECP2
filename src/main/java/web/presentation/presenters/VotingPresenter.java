@@ -1,9 +1,9 @@
 package web.presentation.presenters;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import rest.business.models.entities.Theme;
 import rest.business.models.entities.Vote;
@@ -15,14 +15,14 @@ public class VotingPresenter {
     private String themeName;    
     private Integer value;
     
-    private Map<Theme,Double> themeTransfers = new HashMap<>();
+    private SortedMap<String,Double> themeTransfers = new TreeMap<String,Double>();
     private List<Vote> votes = new ArrayList<>();
     private ArrayList<Theme> themes = (ArrayList<Theme>) DaoFactory.getFactory().getThemeDao().findAll();
     
     private void init() {
         for (int i=0; i<themes.size(); i++){
             votes = DaoFactory.getFactory().getVoteDao().findByTheme(themes.get(i));
-            themeTransfers.put(themes.get(i), (double)sum(votes)/votes.size());
+            themeTransfers.put(themes.get(i).getName(), Double.valueOf((double)sum(votes)/votes.size()));
         }
     }
     
@@ -53,8 +53,12 @@ public class VotingPresenter {
         int id = DaoFactory.getFactory().getVoteDao().findByTheme(theme).size();
         Vote vote = new Vote(id,value,theme);
         DaoFactory.getFactory().getVoteDao().create(vote);
-        double average = (themeTransfers.get(theme) + value) / 2;
-        themeTransfers.put(theme, average);
+        Double average;
+        if (themeTransfers.get(themeName).isNaN())
+            average = Double.valueOf(value);
+        else
+            average = Double.valueOf((themeTransfers.get(themeName) + value) / 2);
+        themeTransfers.put(themeName, average);
         model.put("themeTransfers", themeTransfers);
         return "VotingView";
     }

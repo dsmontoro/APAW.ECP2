@@ -1,7 +1,6 @@
 package web.presentation.presenters;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import rest.business.models.entities.Theme;
 import rest.data.models.daos.DaoFactory;
