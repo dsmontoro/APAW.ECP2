@@ -11,19 +11,20 @@ public class ThemeManagerPresenter {
 
     private String themeName;
     
-    private List<Theme> themes = new ArrayList<>();
-    
     public void setThemeName(String themeName) {
         this.themeName = themeName;
     }
     
     public String process(Model model) {
+        List<Theme> themes = new ArrayList<>();
     	themes = DaoFactory.getFactory().getThemeDao().findAll();
     	model.put("themes", themes);
         return "ThemeManagerView";
     }
 
-    public String createTheme(Model model) {    	
+    public String createTheme(Model model) {  
+        List<Theme> themes = new ArrayList<>();
+        themes = DaoFactory.getFactory().getThemeDao().findAll();
     	Theme theme = new Theme(themes.size(),themeName);
     	DaoFactory.getFactory().getThemeDao().create(theme);
     	themes.add(theme);
